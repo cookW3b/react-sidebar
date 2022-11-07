@@ -1,5 +1,5 @@
 import React from 'react';
-import MotionHoc  from './MotionHOC';
+import MotionHoc  from './MotionHoc';
 
 const ServicePage = () => {
 	return (
