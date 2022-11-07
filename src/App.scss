@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
+
+
+//App
+
+@mixin gradient{
+	background-color: #0c0c0c;
+}
+
+ul{
+	@include gradient();
+}
+
+
+.container{
+	height: 100vh;
+
+	background-color: #8EC5FC;
+	background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+	
+
+	display: flex;
+	align-items: center;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar{
+	@include gradient();
+
+	z-index: 3;
+}
+
+.active{
+	width: 200px !important;
+
+	span{
+		display: inline !important; 
+
+		margin-left: 60px !important;
+
+		transition: display 5s ease !important;
+	}
+}
+
+.set{
+	border-right: 4px solid white !important;
+
+	color: white;
+
+		img{
+			filter: invert(100%) saturate(13502%) brightness(119%) contrast(119%);
+		}
+}
+
+.open{
+
+	transform: translateX(2px) !important;
+
+	&::after{
+		transform: translateX(-100px) !important;
+	}
+
+	&::before{
+		transform: rotate(-45deg) translate(-5px);
+	}
+	div{
+		transform: rotate(45deg) translate(-5px);
+	}
+
+	&:hover{
+		&::before{
+			transform: rotate(-45deg) translate(-5px) !important;
+			}
+		}
+}
+
+.content_page{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+
+	font-family: Raleway;
+	font-size: 98px;
+	font-weight: 900;
+
+	h1{
+		background-color: #FFE53B;
+		background-image: linear-gradient(
+			-225deg,
+			#231557 0%,
+			#44107a 29%,
+			#ff1361 67%,
+			#fff800 100%
+  	);
+		background-size: auto auto;
+  	background-clip: border-box;
+  	background-size: 200% auto;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 5s linear infinite;
+
+		display: inline-block;
+    font-size: 190px;
+	}
+
+
+	@keyframes textclip {
+		to {
+			background-position: 200% center;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.content_page{
+
+		h1{
+			font-size: 75px;
+		}
+	}
+}
+
+
